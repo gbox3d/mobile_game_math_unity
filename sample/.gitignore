@@ -1,16 +1,6 @@
 /Temp
-/Library/metadata
-/Library/ShaderCache
-/Library/*.log
-/Library/ScriptAssemblies
-/Library/assetDatabase3
-/Library/ShaderCache.db
-/Library/CrashedAssetImports.txt
-/Library/ScriptMapper
-/Library/AssetServerCacheV3
-/Library/guidmapper
-/Library/AssetImportState
-/Library/AssetVersioning.db
+/Library/
+/Logs/
 
 /obj
 
@@ -21,3 +11,6 @@
 /*.userprefs
 
 .DS_Store
+.vscode/
+Assets/TextMesh Pro/
+Assets/TextMesh Pro.meta

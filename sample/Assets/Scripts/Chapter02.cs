@@ -117,6 +117,7 @@ public class Chapter02 : MonoBehaviour {
 		h = kh * kh > mh * mh ? kh : mh;
 		v = kv * kv > mv * mv ? kv : mv;
 		
+		
 		if (h * h > Mathf.Epsilon || v * v > Mathf.Epsilon) {
 			transform.position
 				= sphericalCoordinates.Rotate(h * rotateSpeed * Time.deltaTime, v * rotateSpeed * Time.deltaTime).toCartesian + pivot.position;

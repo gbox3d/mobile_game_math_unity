@@ -10,7 +10,7 @@ public class Chapter05 : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		cube = GameObject.Find("Cube");
+		// cube = GameObject.Find("Cube");
 	}
 
 	// Update is called once per frame

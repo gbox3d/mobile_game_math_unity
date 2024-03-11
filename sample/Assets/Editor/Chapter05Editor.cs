@@ -49,7 +49,8 @@ public class Chapter05Editor : Editor {
 
 		if ( GUILayout.Button("Apply" ) ) {
 			mf = obj.cube.GetComponent<MeshFilter>();
-			origVerts = mf.mesh.vertices;
+			// origVerts = mf.mesh.vertices;
+			origVerts = mf.sharedMesh.vertices; // This is the correct way to get the vertices
 			newVerts = new Vector3[origVerts.Length];
 
 			int i = 0;
@@ -58,7 +59,8 @@ public class Chapter05Editor : Editor {
 				i++;
 			}
 
-			mf.mesh.vertices = newVerts;
+			// mf.mesh.vertices = newVerts;
+			mf.sharedMesh.vertices = newVerts; // This line is changed
 		}
 
 		EditorGUILayout.EndVertical();

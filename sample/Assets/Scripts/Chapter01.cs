@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
@@ -20,6 +21,13 @@ public class Chapter01 : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		capsule = GameObject.Find("Capsule");
+
+		// 이름이 btn_back인 버튼을 찾아서 이벤트를 등록한다.
+		Button btn_back = GameObject.Find("btn_back").GetComponent<Button>();
+		btn_back.onClick.AddListener(() => {
+			SceneManager.LoadSceneAsync("Main");
+		});
+
 	}
 
 	// Update is called once per frame
