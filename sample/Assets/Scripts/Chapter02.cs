@@ -13,6 +13,10 @@ public class Chapter02 : MonoBehaviour {
 
 	public Transform pivot;
 
+	[SerializeField]
+	TMPro.TextMeshProUGUI _debugText;
+	
+
 	[System.Serializable]
 	public class SphericalCoordinates
 	{
@@ -106,17 +110,22 @@ public class Chapter02 : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		float kh, kv, mh, mv, h, v;
-		kh = Input.GetAxis( "Horizontal" );
-		kv = Input.GetAxis( "Vertical" );
+		// float kh, kv, mh, mv, h, v;
+		// kh = Input.GetAxis( "Horizontal" );
+		// kv = Input.GetAxis( "Vertical" );
 		
-		bool anyMouseButton = Input.GetMouseButton(0) | Input.GetMouseButton(1) | Input.GetMouseButton(2);
-		mh = anyMouseButton ? Input.GetAxis( "Mouse X" ) : 0f;
-		mv = anyMouseButton ? Input.GetAxis( "Mouse Y" ) : 0f;
+		// bool anyMouseButton = Input.GetMouseButton(0) | Input.GetMouseButton(1) | Input.GetMouseButton(2);
+		// mh = anyMouseButton ? Input.GetAxis( "Mouse X" ) : 0f;
+		// mv = anyMouseButton ? Input.GetAxis( "Mouse Y" ) : 0f;
+
+		// h = kh * kh > mh * mh ? kh : mh;
+		// v = kv * kv > mv * mv ? kv : mv;
+
+		float h = Input.GetAxis("Horizontal");
+		float v = Input.GetAxis("Vertical");
 		
-		h = kh * kh > mh * mh ? kh : mh;
-		v = kv * kv > mv * mv ? kv : mv;
-		
+		// _debugText.text = string.Format("h: {0}, v: {1} , kh: {2}, kv: {3}, mh: {4}, mv: {5}", h, v, kh, kv, mh, mv);
+		_debugText.text = string.Format("h: {0}, v: {1}", h, v);
 		
 		if (h * h > Mathf.Epsilon || v * v > Mathf.Epsilon) {
 			transform.position
